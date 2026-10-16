@@ -1,0 +1,28 @@
+# Local repository backups and workstation metadata
+.backup_git/
+.backup_gitmodules
+.DS_Store
+.idea/
+.vscode/
+
+# Python caches and compiled object files
+__pycache__/
+*.py[cod]
+*.o
+
+# Local Autotools build output
+.deps/
+autom4te.cache/
+config.log
+config.status
+/Partitioners/BOTH/HeiStream/extern/sparsehash/Makefile
+/Partitioners/BOTH/HeiStream/extern/sparsehash/libsparsehash.pc
+/Partitioners/BOTH/HeiStream/extern/sparsehash/src/stamp-h1
+/Partitioners/BOTH/HeiStream/extern/sparsehash/hashtable_test
+/Partitioners/BOTH/HeiStream/extern/sparsehash/libc_allocator_with_realloc_test
+/Partitioners/BOTH/HeiStream/extern/sparsehash/simple_compat_test
+/Partitioners/BOTH/HeiStream/extern/sparsehash/simple_test
+/Partitioners/BOTH/HeiStream/extern/sparsehash/sparsetable_unittest
+/Partitioners/BOTH/HeiStream/extern/sparsehash/template_util_unittest
+/Partitioners/BOTH/HeiStream/extern/sparsehash/time_hash_map
+/Partitioners/BOTH/HeiStream/extern/sparsehash/type_traits_unittest

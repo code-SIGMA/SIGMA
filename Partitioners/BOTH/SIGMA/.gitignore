@@ -1,0 +1,46 @@
+# ── Build & deploy ──────────────────────────────────────────────────────────
+/build/
+/deploy/
+/cmake-build-debug/
+
+# ── IDE & editor ─────────────────────────────────────────────────────────────
+/.idea/
+/.vscode/
+/.cache/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# ── Experiment outputs (keep scripts) ────────────────────────────────────────
+experiments/*
+!experiments/generate_commands.sh
+!experiments/par_commands.txt
+
+# ── Local data / results ──────────────────────────────────────────────────────
+/csv_files/
+/ground_truth/
+/server/
+/eval_scripts/
+*.bin
+
+# ── Local log & scratch files ─────────────────────────────────────────────────
+*.log
+*.tsv
+results.txt
+todo.txt
+
+# ── Project-specific docs (local only) ───────────────────────────────────────
+CLAUDE.md
+AAE.md
+
+# ── benchmark scripts ─────────────────────────────────────────
+hyperparameters.sh
+benchmark.sh
+tune.sh
+
+# ── local utility scripts ─────────────────────────────────────
+convert_dgl_to_metis.py
+compare_algorithms.py
+create_csv_files.py

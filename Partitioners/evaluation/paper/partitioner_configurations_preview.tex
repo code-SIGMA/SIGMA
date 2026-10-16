@@ -1,0 +1,51 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,array,longtable,url}
+\begin{document}
+% Requires: booktabs, array, longtable, url.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.74\textwidth}@{}}
+\caption{Partitioner settings and implementation defaults. Number of partitions: $k\in\{2,4,8,16,32\}$.}\label{tab:partitioner-configurations}\\
+\toprule
+Partitioner & Parameters \\
+\midrule
+\endfirsthead
+\toprule
+Partitioner & Parameters \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{2}{@{}l}{\textbf{Node partitioning}}\\
+\addlinespace[2pt]
+SIGMA & \texttt{mode}=\texttt{light\_plus}; \texttt{prepartitioner}=\texttt{clustre}; \texttt{one\_pass\_algorithm}=\texttt{mod\_fennel} \\
+Random & Uniform random assignment; seed generated at runtime (default) \\
+BuffCut & \texttt{batch\_size} = \texttt{32768}; \texttt{buffer\_size} = \texttt{65536} \\
+HeiStream & \texttt{batch\_size} = \texttt{32768} \\
+METIS & \texttt{objtype} = \texttt{cut} \\
+Cuttana & \texttt{b} = \texttt{1.05}; \texttt{vb} = \texttt{1}; \texttt{subp} = \texttt{1} \\
+LDG & \texttt{slack}=0 (default); random tie-breaking, no explicit seed \\
+FENNEL & $\alpha=0.5$, $\gamma=1.5$; seed $42$ (fixed); shuffled vertex order \\
+KaHIP & \texttt{preconfiguration}=\texttt{strong}; imbalance $3\%$, seed $0$ (defaults) \\
+CatGNN & \texttt{method}=\texttt{SPRING}; $K=1$; seed $42$; one streaming iteration (defaults) \\
+PuLP & Vertex balance $1.10$; BFS initialization; edge balancing and max-cut balancing disabled; one partitioning run (PuLP 0.2 defaults) \\
+\multicolumn{2}{@{}l}{\textbf{Edge partitioning}}\\
+\addlinespace[2pt]
+SIGMA & \texttt{mode} = \texttt{light\_plus}; \texttt{prepartitioner} = \texttt{clustre}; \texttt{one\_pass\_algorithm} = \texttt{hdrf} \\
+Random & Uniform random assignment; seed generated at runtime (default) \\
+2PS & \texttt{prepartitioner\_type}=\texttt{streamcom}; \texttt{balance\_ratio}=1.05, \texttt{str\_iters}=1, \texttt{use\_hdrf}=false (defaults) \\
+DBH & \texttt{memsize}=100 MB (default) \\
+HDRF & \texttt{lambda} = \texttt{1.1}; \texttt{use\_hdrf} = \texttt{True} \\
+HeiStreamE & \texttt{batch\_size} = \texttt{32768} \\
+FSM & \texttt{write}=\texttt{onefile} \\
+HEP100 & \texttt{hdf} = \texttt{100}; \texttt{lambda} = \texttt{1.1}; \texttt{method} = \texttt{hep} \\
+\end{longtable}
+\endgroup
+\end{document}

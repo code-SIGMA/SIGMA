@@ -1,0 +1,24 @@
+x-node-base: &node-base
+  build: .
+  networks: [mpi-net]
+  volumes:
+    - ./:/mnt/dgl
+    - ./.ssh:/root/.ssh
+
+services:
+  node1:
+    <<: *node-base
+    hostname: node1
+    container_name: node1
+  node2:
+    <<: *node-base
+    hostname: node2
+    container_name: node2
+  node3:
+    <<: *node-base
+    hostname: node3
+    container_name: node3
+
+networks:
+  mpi-net:
+    driver: bridge
